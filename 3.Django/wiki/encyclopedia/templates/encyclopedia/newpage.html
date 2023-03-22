@@ -1,0 +1,44 @@
+{% extends "encyclopedia/layout.html" %}
+{% load static %}
+
+
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+<style> 
+    input[type=submit] {
+      background-color: #0465aa;
+      border: none;
+      color: white;
+      padding: 13px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    </style>
+
+
+    <h1>New Entry</h1>
+
+    <form action="{% url 'createPage' %}" method="POST">
+        {% csrf_token %}
+        <label> Name of Page</label>
+        <input type="text"  name="title" placeholder="Enter a title">
+        <br>
+        <label>Content:</label>
+        <br>
+        <textarea name="content"></textarea>
+        <input type="submit" value="Create Page">
+
+        
+    </form>
+
+    
+
+
+{% endblock %}

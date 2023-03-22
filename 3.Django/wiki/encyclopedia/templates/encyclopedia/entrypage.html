@@ -1,0 +1,30 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+    {{content | safe}}
+    <style> 
+        input[type=submit] {
+          background-color: #0465aa;
+          border: none;
+          color: white;
+          padding: 13px 25px;
+          border-radius: 25px;
+          text-decoration: none;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        </style>
+
+    <form action="{% url 'edit' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="entryName" value="{{ title }}">
+        <input type="submit" value="edit">
+    </form>
+
+
+
+{% endblock %}
