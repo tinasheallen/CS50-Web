@@ -1,2 +1,2 @@
 # CS50 Web
- Cs50's web programming
+ CS50's Web Programming from Harvard
